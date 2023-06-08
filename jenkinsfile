@@ -1,7 +1,12 @@
 pipeline {
 agent any {
 stages {
-stage ("stage 1") {
+stage ("git") {
 steps {
-echo "Hello"
-}}}}}
+# echo "Hello"
+
+}
+}
+}
+}
+}
