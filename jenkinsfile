@@ -4,6 +4,7 @@ stages {
 stage ("git") {
 steps {
 echo "Hello"
+ls -ltr
 }
 }
 }
