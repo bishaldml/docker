@@ -18,7 +18,7 @@ sh 'ls -ltr'
 
   stage ("Delivery of Image to Docker Hub") {
     steps {
-      sh 'sudo docker image tag nodejs susigugh/nodejs:1.0'
+      sh 'sudo docker image tag nodejs bishal/nodejs:1.0'
       sh 'sudo docker push susigugh/nodejs:1.0'
     }
   }
