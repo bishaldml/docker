@@ -1,5 +1,5 @@
 # Define the VPC
-resource "aws_vpc" "bishaltestvpc" {
+resource "aws_vpc" "bishal-testvpc" {
   cidr_block = "10.0.0.0/16"
   tags = {
     Name = "bishal-testvpc" 
