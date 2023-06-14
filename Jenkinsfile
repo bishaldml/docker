@@ -6,7 +6,8 @@ stage ("List Files") {
   steps {
 sh 'pwd'
 sh 'ls -ltr'
-sh 'terraform init && terraform plan $$ terraform apply'
+sh 'terraform init && terraform plan'
+sh 'terraform apply autoapply'
     
   }
 }
