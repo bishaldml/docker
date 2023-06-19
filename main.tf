@@ -65,14 +65,11 @@ resource "aws_subnet" "sub-ap-south-1a" {
  
 
  
-
 #Create Internet gateway
 
 resource "aws_internet_gateway" "bishal-ig01" {
 
 }
-
-
 
 resource "aws_internet_gateway_attachment" "igattach" {
 
@@ -83,15 +80,11 @@ resource "aws_internet_gateway_attachment" "igattach" {
 }
 
  
-
- 
-
 resource "aws_route_table" "bishal-routetb01" {
 
 vpc_id              = aws_vpc.bishal-testvpc.id
 
 }
-
  
 
 resource "aws_route" "route01" {
@@ -125,7 +118,6 @@ resource "aws_security_group" "bishal-sg01" {
   vpc_id = aws_vpc.bishal-testvpc.id
 
  
-
 ingress {
 
     from_port   = 22
