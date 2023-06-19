@@ -46,7 +46,7 @@ resource "aws_vpc" "bishal-testvpc" {
 
 resource "aws_subnet" "sub-ap-south-1a" {
 
-  vpc_id = aws_vpc.testvpc.id
+  vpc_id = aws_vpc.bishal-testvpc.id
 
   cidr_block = "10.0.1.0/24"
 
@@ -86,7 +86,7 @@ resource "aws_internet_gateway_attachment" "igattach" {
 
  
 
-resource "aws_route_table" "routetb01" {
+resource "aws_route_table" "bishal-routetb01" {
 
 vpc_id              = aws_vpc.bishal-testvpc.id
 
@@ -96,7 +96,7 @@ vpc_id              = aws_vpc.bishal-testvpc.id
 
 resource "aws_route" "route01" {
 
-  route_table_id            = aws_route_table.routetb01.id
+  route_table_id            = aws_route_table.bishal-routetb01.id
 
   destination_cidr_block    = "0.0.0.0/0"
 
@@ -110,7 +110,7 @@ resource "aws_route_table_association" "routetbassoc01" {
 
   subnet_id      = aws_subnet.sub-ap-south-1a.id
 
-  route_table_id = aws_route_table.routetb01.id
+  route_table_id = aws_route_table.bishal-routetb01.id
 
 }
 
@@ -118,11 +118,11 @@ resource "aws_route_table_association" "routetbassoc01" {
 
 # Define the security group
 
-resource "aws_security_group" "sg01" {
+resource "aws_security_group" "bishal-sg01" {
 
   name_prefix = "sg01_security_group"
 
-  vpc_id = aws_vpc.testvpc.id
+  vpc_id = aws_vpc.bishal-testvpc.id
 
  
 
@@ -164,7 +164,6 @@ egress {
 
     cidr_blocks = ["0.0.0.0/0"]
 
- 
 
 }
 
